@@ -33,7 +33,7 @@ __default_settings__ = {
 __db__ = None
 __config__ = {}
 __app__ = flask.Flask(__name__, static_folder=__www_path__)
-__cors__ = CORS(__app__)
+__cors__ = CORS(__app__, resources={r"/*":{"origins":["http://localhost", "http://127.0.0.1"]}})
 __app__.config['CORS_HEADERS'] = 'Content-Type'
 __device_info__ = {}
 __mqtt_connected__ = False
